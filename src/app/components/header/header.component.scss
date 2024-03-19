@@ -1,0 +1,18 @@
+.header {
+    position: fixed;
+}
+
+.suggested-result {
+    position: absolute;
+    display: list-item !important;
+    z-index: 10;
+    background-color: #fff;
+    width: 300px;
+    top: 40px;
+    border: 1px solid #ddd;
+  }
+  
+  .suggested-search li {
+    border: 1px solid #ddd;
+    padding: 5px;
+  }

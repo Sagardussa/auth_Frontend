@@ -1,0 +1,233 @@
+
+<section class="featured-blog mtb-40">
+ 
+  <div class="container">
+    <!-- <input
+    [(ngModel)]="searchname"
+    #searchInput
+    required
+    type="text"
+    placeholder="Search Product"
+    class="w-50 p-2 pl-2 focus:outline-none border-t-emerald-400 text-sm font-medium rounded  text-gray-600"
+  /> -->
+  
+
+
+    <div class="row">
+      {{nameSerach| json}}
+    
+      <!-- <h2 class="title-heading">Latest Articles</h2> -->
+      <!-- <div class="col-md-4">
+        <div class="blog-box">
+          <img src="assets/images/blog-images.jpg" alt="blog1">
+          <img
+            src="https://m.media-amazon.com/images/I/61DGAlvxRLL._SY879_.jpg"
+            alt="shirt"
+            srcset=""
+          />
+          <h3>How to add Shopify Announcement bar (without an app)</h3>
+          <p>by <span>Pradeep Maurya</span></p>
+          <p>
+            The Shopify announcement bar is an excellent way to promote a
+            special discount offer, a sale, or another type of promotion at the
+            top of your Shopify store. And there’s no need to pay a monthly fee
+            for this feature. Simply paste a few lines of code into your theme
+            and you’re done..
+          </p>
+          <a href="#" class="btn btn-primary">Read more...</a>
+        </div>
+      </div> -->
+
+      <!-- <div class="product-list-wrapper flex justify-between"> -->
+      <!-- <h1>Best Products</h1> -->
+      <!-- <div class="row"> -->
+
+      <!-- <div class="col-sm-3" *ngFor="let item of bestProduct"> -->
+      <div class="col-md-4" *ngFor="let item of productData">
+        <!-- {{item | json}} -->
+       
+        <div class="product-item">
+          <!-- <img src="{{ item.image }}" alt="" /> -->
+          <img
+            src="{{item.productIamge1}}"
+            alt="shirt1"
+            srcset=""
+          />
+          <div class="product-details">
+            <!-- <h6 class="name-head">{{ item.name }}</h6> -->
+            <h6>heqading product {{item.productName}}</h6>
+            <div class="product-price">
+              <h6>Price:{{item.price | currency : "INR" : "symbol-narrow" : "2.0-2"}}</h6>
+            </div>
+          </div>
+          <div class="product-footer">
+            <a routerLink="/product/{{item._id}}">View Details</a>
+            <button (click)="addToCart(item)">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <!-- </div> -->
+      <!-- </div> -->
+
+
+
+
+     
+<!-- 
+      <div class="col-md-4">
+        <div class="product-item">
+          <img
+            src="https://m.media-amazon.com/images/I/41rpb+e6YPL.jpg"
+            alt="shirt4"
+            srcset=""
+          />
+          <div class="product-details">
+            <h6>heqading product</h6>
+            <div class="product-price">
+           
+            <h6>Men's Casual Shirt HIGH Star Men Blue Slim-Fit Casual Shirt</h6>
+            <h6>₹829 M.R.P: ₹1,499 (45% off)</h6>
+              <h2>Price:500RS</h2>
+            </div>
+          </div>
+          <div class="product-footer">
+            <a routerLink="/article/1">View Details</a>
+            <a href="">Add to Cart</a>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- <div
+        class="col-md-4 block max-w-[18rem] rounded-lg bg-white text-surface shadow-secondary-1 dark:bg-surface-dark dark:text-white"
+      >
+        <div class="relative overflow-hidden bg-cover bg-no-repeat">
+          <img
+            class="rounded-t-lg"
+            src="https://m.media-amazon.com/images/I/41rpb+e6YPL.jpg"
+            alt="blog1"
+          />
+        </div>
+        <div class="blog-box p-6">
+          <h5 class="mb-2 text-xl font-medium leading-tight">Van Heusen</h5>
+          <p>Brand: <span> Van Heusen</span></p>
+          <p>Men's Casual Shirt</p>
+          <h2>₹829 M.R.P: ₹1,499 (45% off)</h2>
+          <a href="#" class="btn btn-primary">Read more...</a>
+        </div>
+      </div> -->
+
+      <!-- <div
+        class="col-md-4 block max-w-[18rem] rounded-lg bg-white text-surface shadow-secondary-1 dark:bg-surface-dark dark:text-white"
+      >
+        <div class="relative overflow-hidden bg-cover bg-no-repeat">
+          <img
+            class="rounded-t-lg"
+            src="https://m.media-amazon.com/images/I/41rpb+e6YPL.jpg"
+            alt="blog1"
+          />
+        </div>
+        <div class="blog-box p-6">
+          <h5 class="mb-2 text-xl font-medium leading-tight">Van Heusen</h5>
+          <p>Brand: <span> Van Heusen</span></p>
+          <p>Men's Casual Shirt</p>
+          <h2>₹829 M.R.P: ₹1,499 (45% off)</h2>
+          <a href="#" class="btn btn-primary">Read more...</a>
+        </div>
+      </div> -->
+      <!-- <div class="col-md-4">
+        <div class="blog-box">
+          <img
+            src="https://m.media-amazon.com/images/I/81bZMk6blqL._SY879_.jpg"
+            alt="post1"
+          />
+          <h3>Difference between JavaScript and TypeScript</h3>
+          <p>by <span>Brand:</span></p>
+          <p>
+            What is JavaScript? JavaScript is an object-based scripting
+            language. JavaScript is the most popular programming language of
+            HTML. It helps you to create interactive web pages which is
+            lightweight and cross-platform. JavaScript is not designed for..
+          </p>
+          <a href="#" class="btn btn-primary">Read more...</a>
+        </div> -->
+      <!-- </div> -->
+      <!-- <div class="col-md-4">
+        <div class="blog-box">
+          <img
+            src="https://m.media-amazon.com/images/I/71dsiWEmoJL._SY879_.jpg"
+            alt="post2"
+          />
+          <h3>How to use cookies in angular</h3>
+          <p>by <span>Pradeep Maurya</span></p>
+          <p>
+            What is Cookies in Angular? Cookies are small packages of
+            information that can be temporarily stored/saved by your browser and
+            websites which are using cookies for multiple things. Cookies are
+            used in multiple requests and browser sessions and can store..
+          </p>
+          <a href="#" class="btn btn-primary">Read more...</a>
+        </div>
+      </div> -->
+      <!-- <div class="col-md-4">
+        <div class="blog-box">
+          <img
+            src="https://m.media-amazon.com/images/I/71xZY5-a1oL._SY879_.jpg"
+            alt="post3"
+          />
+          <h3>
+            How to Get Current Visitor Location using HTML5 Geolocation API
+          </h3>
+          <p>by <span>Pradeep Maurya</span></p>
+          <p>
+            This feature Get Current Visitor Location helps to provide the
+            website visitor with a better browsing experience. For instance, you
+            can return search results which are close to the location of the
+            user..
+          </p>
+          <a href="#" class="btn btn-primary">Read more...</a>
+        </div>
+      </div> -->
+      <!-- <div
+        class="block rounded-lg bg-white text-center shadow-secondary-1 dark:bg-surface-dark dark:text-white text-surface"
+      >
+        <div
+          class="border-b-2 border-neutral-100 px-6 py-3 dark:border-white/10"
+        >
+          Featured
+        </div>
+        <div class="p-6">
+          <h5 class="mb-2 text-xl font-medium leading-tight">
+            Special title treatment
+          </h5>
+          <p class="mb-4 text-base">
+            With supporting text below as a natural lead-in to additional
+            content.
+          </p>
+          <button
+            type="button"
+            href="#"
+            class="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
+            data-twe-ripple-init
+            data-twe-ripple-color="light"
+          >
+            Go somewhere
+          </button>
+        </div>
+        <div
+          class="border-t-2 border-neutral-100 px-6 py-3 dark:border-white/10 text-surface/75 dark:text-neutral-300"
+        >
+          2 days ago
+        </div>
+      </div> -->
+      <!-- <div class="col-md-4">
+          <div class="blog-box">
+            <img src="https://m.media-amazon.com/images/I/813rsG8YqKL._SY879_.jpg" alt="post4">
+            <h3>What is MERN Stack?</h3>
+            <p>by <span>Pradeep Maurya</span></p>
+            <p>In the world of software development, MERN Stack is one of the most widely used technological stacks and a web development framework. we can create simple as well complex web applications using MERN (MongoDB, ExpressJS, ReactJS, and NodeJS)...</p>
+            <a href="#" class="btn btn-primary">Read more...</a>
+          </div>
+        </div> -->
+    </div>
+  </div>
+</section>

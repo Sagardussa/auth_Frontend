@@ -1,0 +1,201 @@
+<!-- <section class="blog-list mtb-40 p-2">
+  <div class="container">
+    <h1>Article List</h1>
+    <div class="row">
+      <div class="col-md-8">
+        <div class="col-md-12 p-3">
+          <div class="blog-box">
+            <div class="row">
+              <div class="col-md-4">
+                <img src="assets/images/blog-images.jpg" alt="blog1" />
+              </div>
+              <div class="col-md-8">
+                <h3>How to add Shopify Announcement bar (without an app)</h3>
+                <p>by <span>Pradeep Maurya</span></p>
+                <p>
+                  The Shopify announcement bar is an excellent way to promote a
+                  special discount offer, a sale, or another type of
+                  promotion...
+                </p>
+                <a href="/article/1" class="readmore">Read more...</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="blog-box">
+            <div class="row">
+              <div class="col-md-4">
+                <img src="assets/images/blog-images2.jpg" alt="blog1" />
+              </div>
+              <div class="col-md-8">
+                <h3>Transpilation in Angular</h3>
+                <p>by <span>Pradeep Maurya</span></p>
+                <p>
+                  Transpilation = translate + compilation The Angular compiler
+                  translates the html template to super optimized JavaScript
+                  code...
+                </p>
+                <a href="/article/2" class="readmore">Read more...</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="blog-box">
+            <div class="row">
+              <div class="col-md-4">
+                <img src="assets/images/img3.jpeg" alt="blog1" />
+              </div>
+              <div class="col-md-8">
+                <h3>Difference between JavaScript and TypeScript</h3>
+                <p>by <span>Pradeep Maurya</span></p>
+                <p>
+                  What is JavaScript? JavaScript is an object-based scripting
+                  language. JavaScript is the most popular programming language
+                  of HTML...
+                </p>
+                <a href="/article/3" class="readmore">Read more...</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="blog-box">
+            <div class="row">
+              <div class="col-md-4">
+                <img src="assets/images/img4.jpg" alt="blog1" />
+              </div>
+              <div class="col-md-8">
+                <h3>How to use cookies in angular</h3>
+                <p>by <span>Pradeep Maurya</span></p>
+                <p>
+                  What is Cookies in Angular? Cookies are small packages of
+                  information that can be temporarily stored/saved by your
+                  browser ...
+                </p>
+                <a href="/article/4" class="readmore">Read more...</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="blog-box">
+            <div class="row">
+              <div class="col-md-4">
+                <img src="assets/images/img5.jpeg" alt="blog1" />
+              </div>
+              <div class="col-md-8">
+                <h3>
+                  How to Get Current Visitor Location using HTML5 Geolocation
+                  API
+                </h3>
+                <p>by <span>Pradeep Maurya</span></p>
+                <p>
+                  This feature Get Current Visitor Location helps to provide the
+                  website visitor with a better browsing experience...
+                </p>
+                <a href="/article/5" class="readmore">Read more...</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="blog-box">
+            <div class="row">
+              <div class="col-md-4">
+                <img src="assets/images/img6.jpeg" alt="blog1" />
+              </div>
+              <div class="col-md-8">
+                <h3>What is MERN Stack?</h3>
+                <p>by <span>Pradeep Maurya</span></p>
+                <p>
+                  In the world of software development, MERN Stack is one of the
+                  most widely used technological stacks and a web development
+                  framework...
+                </p>
+                <a href="/article/6" class="readmore">Read more...</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <app-featured-articles></app-featured-articles>
+        <app-categories></app-categories>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+
+
+<!-- new UI -->
+<!--
+  This example requires some changes to your config:
+  
+  ```
+  // tailwind.config.js
+  module.exports = {
+    // ...
+    plugins: [
+      // ...
+      require('@tailwindcss/aspect-ratio'),
+    ],
+  }
+  ```
+-->
+
+
+<div class="bg-white" >
+  <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+    <h2 class="text-2xl font-bold tracking-tight text-gray-900">Product List</h2>
+
+    <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8 ">
+
+      <div class="group relative" *ngFor="let item of productData" >
+        <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
+          <img src="{{item.productIamge1}}" alt="Front of men&#039;s Basic Tee in black." class="h-full w-full  object-center lg:h-full lg:w-full">
+        </div>
+        <div class="mt-4 flex justify-between">
+          <div>
+            <h3 class="text-sm text-gray-700">
+              <!-- <a href="product/{{item.id}}" routerLink="/product/{{item._id}}"> -->
+                <a routerLink="/product/{{item._id}}">
+                <span aria-hidden="true" class="absolute inset-0"></span>
+                <!-- Basic Tee -->
+                {{item.productName}}
+
+              </a>
+            </h3>
+            <p class="mt-1 text-sm text-gray-500">{{item.color}}</p>
+          </div>
+          <p class="text-sm font-medium text-gray-900">{{item.price | currency : "INR" : "symbol-narrow" : "2.0-2"}}</p>
+        </div>
+      </div>
+
+      <!-- More products... -->
+
+      <!-- <div class="group relative">
+        <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
+          <img src="https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-02.jpg" alt="Front of men&#039;s Basic Tee in black." class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+        </div>
+        <div class="mt-4 flex justify-between">
+          <div>
+            <h3 class="text-sm text-gray-700">
+              <a href="product/1">
+                <span aria-hidden="true" class="absolute inset-0"></span>
+                Basic Tee
+              </a>
+            </h3>
+            <p class="mt-1 text-sm text-gray-500">Black</p>
+          </div>
+          <p class="text-sm font-medium text-gray-900">$35</p>
+        </div>
+      </div> -->
+
+    </div>
+  </div>
+</div>
+

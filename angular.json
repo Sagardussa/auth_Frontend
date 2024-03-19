@@ -30,14 +30,19 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/CSS/bootstrap.min.css",
               "src/styles.scss"
             ],
-            "scripts": [],
+            "scripts": [ 
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+          ],
             "server": "src/main.server.ts",
-            "prerender": true,
-            "ssr": {
-              "entry": "server.ts"
-            }
+            "prerender": false,
+            // "ssr": {
+            //   "entry": "server.ts"
+            // }
+            "ssr": false
+
           },
           "configurations": {
             "production": {

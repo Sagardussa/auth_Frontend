@@ -1,0 +1,98 @@
+<div class="lg:w-4/12 my-20 p-10 shadow-2xl mx-auto">
+  <h3 class="text-3xl text-center font-semibold py-5">Register</h3>
+
+  <form [formGroup]="registerdform" class="flex flex-col">
+    <div class="flex flex-col mt-4 mb-1">
+      <input
+        formControlName="firstName"
+        type="text"
+        class="p-2 border border-gray-300 rounded"
+        placeholder="firstName"
+      />
+      @if (registerdform.hasError('required','firstName') &&
+      registerdform.controls['firstName'].dirty) {
+      <span class="text-red-500">*FirstName is required</span>
+      }
+    </div>
+    <div class="flex flex-col mt-4 mb-1">
+      <input
+        formControlName="lastName"
+        type="text"
+        class="p-2 border border-gray-300 rounded"
+        placeholder="lastName"
+      />
+      @if (registerdform.hasError('required','lastName') &&
+      registerdform.controls['lastName'].dirty) {
+      <span class="text-red-500">*LastName is required</span>
+      }
+    </div>
+    <div class="flex flex-col mt-4 mb-1">
+      <input
+        name="email"
+        formControlName="email"
+        type="text"
+        class="p-2 border border-gray-300 rounded"
+        placeholder="Email"
+      />
+      @if (registerdform.hasError('required','email') &&
+      registerdform.controls['email'].dirty) {
+      <span class="text-red-500">*Email is required</span>
+      } @if (registerdform.hasError('email','email')) {
+      <span class="text-red-500">*Email is invalid</span>
+      }
+    </div>
+    <div class="flex flex-col mt-4 mb-1">
+      <input
+        formControlName="userName"
+        type="text"
+        class="p-2 border border-gray-300 rounded"
+        placeholder="userName"
+      />
+      @if (registerdform.hasError('required','userName') &&
+      registerdform.controls['userName'].dirty) {
+      <span class="text-red-500">*UserName is required</span>
+      }
+    </div>
+
+    <div class="flex flex-col mt-4 mb-1">
+      <input
+        formControlName="password"
+        type="text"
+        class="p-2 border border-gray-300 rounded"
+        placeholder="Password"
+      />
+      @if (registerdform.hasError('required','password') &&
+      registerdform.controls['password'].dirty) {
+      <span class="text-red-500">*Password is required</span>
+      }
+    </div>
+    <div class="flex flex-col mt-4 mb-1">
+      <input
+        formControlName="confirPassword"
+        type="password"
+        class="p-2 border border-gray-300 rounded"
+        placeholder="confirm password"
+      />
+      @if (registerdform.hasError('required','confirPassword') &&
+      registerdform.controls['confirPassword'].dirty) {
+      <span class="text-red-500">*Confirm Password is required</span>
+      } 
+      @if(registerdform.hasError('confirmPasswordvalidator','confirPassword'))
+      {
+      <span class="text-red-500">* Password didn't match</span>
+      }
+    </div>
+    <button
+      [disabled]="registerdform.invalid"
+      [class.disabled]="registerdform.invalid"
+      (click)="register()"
+      class="bg-indigo-500 p-2 text-white rounded mt-3"
+    >
+      Submit
+    </button>
+  </form>
+  <div class="flex justify-center mt-5">
+    <span> Already have Account </span>
+    <a routerLink="/login" class="text-indigo-600 ml-2 cursor-pointer">Login Here</a>
+  </div>
+</div>
