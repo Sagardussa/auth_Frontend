@@ -36,7 +36,7 @@ export class LatestProductComponent {
 
     this.productsService.getproductData()?.subscribe({
       next: (res) => {
-        // console.log('res', res.data);
+        console.log('res', res.data);
         this.productData = res.data;
       },
       error: (err) => {
