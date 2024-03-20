@@ -170,23 +170,24 @@
                     ><i class="fa fa-search font-light" aria-hidden="true"></i>
                   </span> -->
             <input
-              [(ngModel)]="searchname"
+              [(ngModel)]="searchTerm"
+              (keyup)="search($event)"
               #searchInput
               required
               type="text"
               placeholder="Search Product"
               class="w-50 p-2 pl-2 focus:outline-none text-sm font-medium rounded rounded-r-none border-bottom text-gray-600"
             />
-            <button
+            <!-- <button
               class="bg-slate-400 p-2 rounded-r text-sm font-medium text-white outline-none outline-0"
             >
               Search
-            </button>
-            <ul class="suggested-result" *ngIf="searchResult">
+            </button> -->
+            <!-- <ul class="suggested-result" *ngIf="searchResult">
               <li *ngFor="let item of searchResult">
-                <!-- <a (mousedown)="redirectToDetails(item.id)">{{item.name}}</a> -->
+                <a (mousedown)="redirectToDetails(item.id)">{{item.name}}</a>
               </li>
-            </ul>
+            </ul> -->
           </div>
           }
           <!-- (ngModelChange)="searchFun()" -->

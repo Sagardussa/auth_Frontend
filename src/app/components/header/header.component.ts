@@ -16,7 +16,7 @@ export class HeaderComponent implements OnInit {
   authService = inject(AuthService);
   productsService = inject(ProductsService);
   router = inject(Router);
-  searchname: string = '';
+  searchTerm: string = '';
   searchResult: undefined | any[];
   // route = inject(ActivatedRoute);
   isLoggedIn: boolean = false;
@@ -34,6 +34,12 @@ export class HeaderComponent implements OnInit {
 
   shows() {
     this.isSerach = !this.isSerach;
+  }
+  search(event:any){
+    this.searchTerm = (event.target as HTMLInputElement).value;
+    console.log(this.searchTerm);
+
+    this.productsService.search.next(this.searchTerm);
   }
   Logout() {
     localStorage.removeItem('user_id');

@@ -1,19 +1,22 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'searchProduct',
+  name: 'searchproduct',
   standalone: true,
 })
 export class SearchProductPipe implements PipeTransform {
-  transform(value: any, searchText: any[]): any {
-    if (!searchText) {
+  transform(value: any[], filterString: string, propName: string): any {
+    const result: any = [];
+    if (!value || filterString == '' || propName == '') {
       return value;
     }
-    return value.filter((it: any) => {
-      return (
-        it.color.toLocaleLowerCase().includes(searchText) ||
-        it.price.toLocaleLowerCase().includes(searchText)
-      );
+    value.forEach((a: any) => {
+      if (
+        a[propName].trim().toLowerCase().includes(filterString.toLowerCase())
+      ) {
+        result.push(a);
+      }
     });
+    return result;
   }
 }

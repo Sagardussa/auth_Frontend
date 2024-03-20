@@ -3,13 +3,14 @@ import { Component, Input, inject, input } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ProductsService } from '../../services/products.service';
 import { FormsModule } from '@angular/forms';
+import { SearchProductPipe } from "../../pipes/search-product.pipe";
 
 @Component({
-  selector: 'app-latest-product',
-  standalone: true,
-  imports: [CommonModule, RouterModule, FormsModule],
-  templateUrl: './latest-product.component.html',
-  styleUrl: './latest-product.component.css',
+    selector: 'app-latest-product',
+    standalone: true,
+    templateUrl: './latest-product.component.html',
+    styleUrl: './latest-product.component.css',
+    imports: [CommonModule, RouterModule, FormsModule, SearchProductPipe]
 })
 export class LatestProductComponent {
   // searchname:any
@@ -17,22 +18,18 @@ export class LatestProductComponent {
   data: any;
   productsService = inject(ProductsService);
   productData: any = [];
-  
-  @Input()
-  nameSerach: any;
+  searchKey: string = '';
 
   constructor() {}
 
  
 
   ngOnInit(): void {
-    // console.log("nameSerachngOnInit",this.nameSerach);
-    // this.data = this.nameSerach
-
-    // throw new Error('Method not implemented.');
-    // this.productsService.getproductData().subscribe((res) => {
-    //   console.log('res', res);
-    // });
+    this.productsService.search.subscribe((val: any) => {
+      this.searchKey = val;
+      console.log("searchKey ngOnInit",this.searchKey);
+      
+    });
 
     this.productsService.getproductData()?.subscribe({
       next: (res) => {

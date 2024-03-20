@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row grid grid-cols-3 gap-2">
       <div
-        *ngFor="let item of productData"
+        *ngFor="let item of productData | searchproduct:searchKey:'productName'"
         class="w-72 max-h-full max-w-sm m-3 md: bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
       >
         <a routerLink="/product/{{ item._id }}">
@@ -18,8 +18,14 @@
               <h5
                 class="ellipsis nowrap text-xl font-semibold tracking-tight text-gray-900 dark:text-white"
               >
-                {{ item?.productName }}
+                {{item?.productName}}
               </h5>
+              <h5
+                class="ellipsis nowrap text-xl font-semibold tracking-tight text-gray-900 dark:text-white"
+              >
+                {{ item?.color }}
+              </h5>
+              
             </a>
             <div class="flex items-center m-3">
               <div class="flex items-center space-x-1 rtl:space-x-reverse">
