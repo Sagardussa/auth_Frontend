@@ -9,6 +9,8 @@ import { BehaviorSubject } from 'rxjs';
 export class ProductsService {
   http = inject(HttpClient);
   public search = new BehaviorSubject<any>("")
+  public textCate = new BehaviorSubject<any>("")
+
 
   constructor() {}
 

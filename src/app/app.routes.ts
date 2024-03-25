@@ -38,6 +38,14 @@ export const routes: Routes = [
       import('./pages/product-details/product-details.component'),
     canActivate: [authGuard],
   },
+  // {
+  //   path: 'cart/:userId',
+  //   loadComponent: () => import('./pages/cart/cart.component'),
+  // },
+  {
+    path: 'cart',
+    loadComponent: () => import('./pages/cart/cart.component'),
+  },
 
   { path: '**', component: PageNotFoundComponent }, // Wildcard route for a 404 page
 ];

@@ -37,10 +37,13 @@ export default class LoginComponent implements OnInit {
     // console.log(this.loginform.value);
     this.authService.loginServices(this.loginform?.value).subscribe({
       next: (res) => {
-        // alert('login is success');
-        alert(res.message)
-        localStorage.setItem("user_id",res.data._id);
-        this.authService.isLoggedIn$.next(true)
+        // console.log("res",res.data);
+
+        alert(res.message);
+        localStorage.setItem('user_id', res.data._id);
+        localStorage.setItem('userName', JSON.stringify(res.data.userName));
+        // localStorage.setItem("user",res.data);
+        this.authService.isLoggedIn$.next(true);
         this.router.navigate(['products']);
         this.loginform.reset();
       },
